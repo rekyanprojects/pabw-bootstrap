@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies List</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">Movies</a>
+
+                <!-- Mobile menu button -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#movieNav"
+                    aria-controls="movieNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <!-- Navigation links -->
+                <div class="collapse navbar-collapse" id="movieNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#movie-list">List of Movies</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#add-movie">Add Movie</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#recommendations">Movie Recommendations</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main>
+        <!-- MOVIE LIST -->
+        <section id="movie-list" class="container py-5">
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">Movies</h1>
+                <p class="text-muted">List of movies I've watched</p>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <caption>
+                        List of movies I've watched
+                    </caption>
+
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">
+                                Title
+                            </th>
+
+                            <th scope="col">
+                                Year
+                            </th>
+
+                            <th scope="col">
+                                Genre
+                            </th>
+
+                            <th scope="col">
+                                Rating
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                Exit
+                            </th>
+
+                            <td>
+                                2019
+                            </td>
+
+                            <td>
+                                Comedy
+                            </td>
+
+                            <td>
+                                <span class="badge text-bg-success">
+                                    9/10
+                                </span>
+                            </td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row">
+                                Midnight Runner
+                            </th>
+
+                            <td>
+                                2017
+                            </td>
+
+                            <td>
+                                Comedy
+                            </td>
+
+                            <td>
+                                <span class="badge text-bg-success">
+                                    9/10
+                                </span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">
+                                The Shadow's Edge
+                            </th>
+
+                            <td>
+                                2025
+                            </td>
+
+                            <td>
+                                Action
+                            </td>
+
+                            <td>
+                                <span class="badge text-bg-success">
+                                    9/10
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Movie image -->
+            <figure class="text-center mt-5">
+                <img src="movie.jpg" class="img-fluid rounded" alt="A collection of movie posters">
+                <figcaption class="text-muted mt-2">
+                    A collection of movie posters
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- ADD MOVIE -->
+        <section id="add-movie" class="bg-light py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <h2 class="fw-bold mb-4">
+                            Add Movie
+                        </h2>
+
+                        <form action="/save" method="post">
+
+                            <!-- Movie title -->
+                            <div class="mb-3">
+                                <label for="movie-title" class="form-label">
+                                    Movie Title
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="movie-title"
+                                    name="movie-title"
+                                    placeholder="Enter movie title"
+                                    required>
+                            </div>
+
+                            <!-- Genre -->
+                            <div class="mb-3">
+                                <label for="movie-genre" class="form-label">
+                                    Genre
+                                </label>
+
+                                <select
+                                    id="movie-genre"
+                                    name="movie-genre"
+                                    class="form-select"
+                                    required>
+
+                                    <option value="">
+                                        Choose a Genre
+                                    </option>
+
+                                    <option value="action">
+                                        Action
+                                    </option>
+
+                                    <option value="horror">
+                                        Horror
+                                    </option>
+
+                                    <option value="comedy">
+                                        Comedy
+                                    </option>
+
+                                    <option value="drama">
+                                        Drama
+                                    </option>
+
+                                    <option value="fantasy">
+                                        Fantasy
+                                    </option>
+
+                                    <option value="romance">
+                                        Romance
+                                    </option>
+
+                                    <option value="sci-fi">
+                                        Sci-Fi
+                                    </option>
+
+                                    <option value="thriller">
+                                        Thriller
+                                    </option>
+                                </select>
+
+                            </div>
+
+
+                            <!-- Rating -->
+                            <div class="mb-3">
+                                <label for="movie-rating" class="form-label">
+                                    Rating
+                                </label>
+
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    id="movie-rating"
+                                    name="movie-rating"
+                                    min="1"
+                                    max="10"
+                                    placeholder="1 - 10"
+                                    required>
+
+                                <div class="form-text">
+                                    Rating must be between 1 and 10.
+                                </div>
+
+                            </div>
+
+                            <!-- Submit -->
+                            <button type="submit" class="btn btn-primary">
+                                Save Movie
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECOMMENDATIONS -->
+        <section id="recommendations" class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">
+                    Movie Recommendations
+                </h2>
+
+                <p class="text-muted">
+                    Movies you might enjoy
+                </p>
+
+            </div>
+
+            <div class="row g-4">
+                <!-- Exit -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Exit
+                            </h5>
+
+                            <p class="card-text">
+                                Recommended for comedy
+                                and action fans.
+                            </p>
+
+                            <span class="badge text-bg-primary">
+                                Comedy
+                            </span>
+
+                            <span class="badge text-bg-danger">
+                                Action
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Midnight Runner -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Midnight Runner
+                            </h5>
+
+                            <p class="card-text">
+                                Recommended for comedy,
+                                action, and thriller fans.
+                            </p>
+
+                            <span class="badge text-bg-primary">
+                                Comedy
+                            </span>
+
+                            <span class="badge text-bg-danger">
+                                Action
+                            </span>
+
+                            <span class="badge text-bg-dark">
+                                Thriller
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Shadow's Edge -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                The Shadow's Edge
+                            </h5>
+
+                            <p class="card-text">
+                                Recommended for action,
+                                thriller, and crime fans.
+                            </p>
+
+                            <span class="badge text-bg-danger">
+                                Action
+                            </span>
+
+                            <span class="badge text-bg-dark">
+                                Thriller
+                            </span>
+
+                            <span class="badge text-bg-secondary">
+                                Crime
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <p class="text-center mb-0">
+                Rekyan Noviandary Widyaningsih · 25523050 · 2026
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
